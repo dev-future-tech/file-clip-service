@@ -42,3 +42,14 @@ INFO:werkzeug:WARNING: This is a development server. Do not use it in a producti
 INFO:werkzeug:Press CTRL+C to quit
 ```
 
+## Creating the Docker Image
+
+```bash
+$ docker build --tag=<tag> . --label "runtime=Flask" --label "language=Python" --label "language-version=3.12"
+```
+
+## Running the Docker Image
+
+```bash
+$ docker run --rm --publish 8070:8070 anthonyikeda/borrowing-service:0.0.1
+```
