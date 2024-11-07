@@ -1,0 +1,8 @@
+{
+    "files": [
+      { "name": "sample.txt", "content": "<p>Test text abc</p>" },
+      { "name": "sample(1).txt", "content": "<p>Test textb</p>" },
+      { "name": "sample copy.txt", "content": "<p>Test texta</p>" },
+      { "name": "sample(2).txt", "content": "Test text" }
+    ]
+}
