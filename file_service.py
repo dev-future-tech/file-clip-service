@@ -14,9 +14,8 @@ class FileColl:
     files: List[FileMeta]
 
 class FileMetaSchema(Schema):
-    file_id= fields.Str(dump_only=True)
-    file_name= fields.Str(dump_only=True)
-    content= fields.Str(dump_only=True)
+    name= fields.String()
+    content= fields.String()
 
 class FileCollSchema(Schema):
     files= fields.List(
@@ -24,9 +23,7 @@ class FileCollSchema(Schema):
         required=False,
     )
 
-
-
 def saveFiles(file_metadata: FileColl):
-    for rec in file_metadata.files:
-        logger.info(rec.file_name)
+    for rec in file_metadata["files"]:
+        logger.info(f'${rec["name"]}, ${rec["content"]}')
     return
