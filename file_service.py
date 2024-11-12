@@ -2,11 +2,12 @@ import psycopg
 import logging
 from typing import List
 from marshmallow import Schema, fields
+import os
 
 logger = logging.getLogger(__name__)
 
 # CONNECT_URL = "psycopgdbname=library_db user=librarian passwd=letmein"
-CONNECT_URL = "postgresql://librarian:letmein@localhost:5432/library_db"
+CONNECT_URL = os.environ.get("DATABASE_URL", "postgresql://librarian:letmein@localhost:5432/library_db")
 
 
 class FileMeta:
