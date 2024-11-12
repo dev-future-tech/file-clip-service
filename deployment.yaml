@@ -21,15 +21,8 @@ spec:
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
               value: http://lgtm.default:4318
             - name: OTEL_TRACES_EXPORTER
-              value: oltp
+              value: otlp
             - name: OTEL_LOGS_EXPORTER
-              value: oltp
+              value: otlp
             - name: OTEL_METRICS_EXPORTER
-              value: oltp
-          resources:
-            limits:
-              memory: "64Mi"
-              cpu: "250m"
-            requests:
-              memory: "32Mi"
-              cpu: "200m"
+              value: otlp
