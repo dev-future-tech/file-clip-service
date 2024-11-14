@@ -3,7 +3,7 @@ apiVersion: apps/v1
 metadata:
   name: file-service-api
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       name: file-service-api
@@ -14,15 +14,16 @@ spec:
     spec:
       containers:
         - name: file-service-api
-          image: anthonyikeda/file-clip-service:0.0.1
+          image: anthonyikeda/file-clip-service:0.0.2
           env:
             - name: DATABASE_URL
               value: "postgresql://librarian:letmein@general-release-postgresql.default:5432/library_db"
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
-              value: http://lgtm.default:4318
-            - name: OTEL_TRACES_EXPORTER
-              value: otlp
-            - name: OTEL_LOGS_EXPORTER
-              value: otlp
-            - name: OTEL_METRICS_EXPORTER
-              value: otlp
+              value: http://lgtm.default:4318/
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "250m"
+            requests:
+              memory: "256Mi"
+              cpu: "100m"

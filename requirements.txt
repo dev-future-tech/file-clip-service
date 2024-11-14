@@ -7,3 +7,4 @@ opentelemetry-instrumentation==0.49b0
 opentelemetry-sdk==1.28.0
 opentelemetry-semantic-conventions==0.49b0
 marshmallow==3.23.1
+opentelemetry-instrumentation-flask==0.49b0

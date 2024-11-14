@@ -1,13 +1,17 @@
+import logging
 from flask import Flask, request, make_response
+from opentelemetry.instrumentation.flask import FlaskInstrumentor
 import logging
 from typing import List
 from file_service import FileCollSchema
 import file_service
-import json
 
 app = Flask(__name__)
+FlaskInstrumentor().instrument_app(app)
+
 
 logging.basicConfig(level=logging.INFO)
+
 logger = logging.getLogger(__name__)
 
 
